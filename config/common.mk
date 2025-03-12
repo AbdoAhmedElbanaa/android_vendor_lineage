@@ -340,6 +340,7 @@ PRODUCT_PACKAGES += \
     DocumentsUIOverlay \
     LineageFrameworksOverlay \
     NetworkStackOverlay \
+    NfcOverlay \
     PermissionControllerOverlay
 
 # Translations
