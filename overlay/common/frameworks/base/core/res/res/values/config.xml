@@ -255,6 +255,35 @@
         <item>device_personalization_services/Notification__enable_otp_check_for_default_sms_package=true</item>
         <item>device_personalization_services/Notification__enable_otp_in_smart_suggestion=true</item>
 
+        <!-- SystemUI Notification Organizer, Categorization & Essential -->
+        <item>systemui/notification_assistant_adjustments=true</item>
+        <item>systemui/notification_categorization=true</item>
+        <item>systemui/notification_organizer=true</item>
+        <item>systemui/notification_essential=true</item>
+        <item>systemui/notification_summarization=true</item>
+        <item>systemui/enable_essential_notifications=true</item>
+        <item>systemui/compact_heads_up_notification=true</item>
+
+        <!-- Google Android System Intelligence (AiAi) Notification Feature Flags -->
+        <item>device_personalization_services/Notification__enable_notification_assistant=true</item>
+        <item>device_personalization_services/Notification__enable_smart_replies=true</item>
+        <item>device_personalization_services/Notification__enable_smart_actions=true</item>
+        <item>device_personalization_services/Notification__enable_notification_categorization=true</item>
+        <item>device_personalization_services/Notification__enable_notification_organizer=true</item>
+        <item>device_personalization_services/Notification__enable_essential_notifications=true</item>
+        <item>device_personalization_services/Notification__enable_notification_summarization=true</item>
+
+        <!-- Overview / Recents AI Selection (Text, Lens & Image OCR in Recents) -->
+        <item>device_personalization_services/Overview__enable_barcode_detection=true</item>
+        <item>device_personalization_services/Overview__enable_image_search=true</item>
+        <item>device_personalization_services/Overview__enable_lens_r_overview_long_press=true</item>
+        <item>device_personalization_services/Overview__enable_lens_r_overview_select_mode=true</item>
+        <item>device_personalization_services/Overview__enable_lens_r_overview_translate_action=true</item>
+
+        <!-- Live Translate & Captions -->
+        <item>device_personalization_services/LiveTranslate__enable_live_translate=true</item>
+        <item>device_personalization_services/Captions__enable_system_captions=true</item>
+
        <!-- Now Playing -->
         <item>device_personalization_services/NowPlaying__enable_now_playing_lock_screen_update=true</item>
         <item>device_personalization_services/NowPlaying__enable_now_playing_quick_affordance=true</item>
@@ -415,7 +444,7 @@
         <item>device_personalization_services/WallpaperEffects__enable_cinematic_effect=true</item>
         <item>device_personalization_services/WallpaperEffects__enable_cinematic_mdd=true</item>
         <item>device_personalization_services/WallpaperEffects__enable_foreground_model_download=true</item>
-        <item>device_personalization_services/WallpaperEffects__enable_person_segment_tpu=true</item>
+        <item>device_personalization_services/WallpaperEffects__enable_person_segment_tpu=false</item>
         <item>device_personalization_services/WallpaperEffects__return_texturedmesh_with_error_status=true</item>
         <item>device_personalization_services/WallpaperEffects__use_gpu=true</item>
         <item>device_personalization_services/WallpaperEffects__use_tpu=false</item>
@@ -518,5 +547,20 @@
                   hexadecimal int (#FFcc99,#aabbcc). -->
     <string-array name="theming_defaults" translatable="false">
         <item>*|TONAL_SPOT|#0049c7</item>
+    </string-array>
+
+    <!-- Unblock Notification Categorization & Summarization -->
+    <string-array name="config_notificationDefaultUnsupportedAdjustments" translatable="false" />
+
+    <!-- Default Assistant Access Component (AiAi + ExtServices Fallback) -->
+    <string name="config_defaultAssistantAccessComponent" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.common.notification.service.AiAiNotificationAssistantService:android.ext.services/android.ext.services.notification.Assistant</string>
+
+    <!-- Approved System Intelligence & Assistant Listener Access Packages -->
+    <string-array name="config_defaultListenerAccessPackages" translatable="false">
+        <item>com.google.android.apps.nexuslauncher</item>
+        <item>com.google.android.setupwizard</item>
+        <item>com.google.android.apps.pixelmigrate</item>
+        <item>com.google.android.as</item>
+        <item>com.google.android.projection.gearhead</item>
     </string-array>
 </resources>
