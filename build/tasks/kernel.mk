@@ -264,7 +264,7 @@ endif
 PATH_OVERRIDE += LD_LIBRARY_PATH=$(TARGET_KERNEL_CLANG_PATH)/lib64:$$LD_LIBRARY_PATH
 PATH_OVERRIDE += PATH=$(TARGET_KERNEL_CLANG_PATH)/bin:$$PATH
 ifeq ($(KERNEL_CC),)
-    KERNEL_CC := CC="$(KERNEL_CC_WRAPPER) clang" LD=ld.lld
+    KERNEL_CC := CC="$(KERNEL_CC_WRAPPER) $(TARGET_KERNEL_CLANG_PATH)/bin/clang" LD=ld.lld
 endif
 
 # System tools are no longer allowed on 10+

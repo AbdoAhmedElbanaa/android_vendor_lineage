@@ -35,11 +35,6 @@ for arg in "$@"; do
     esac
 done
 
-if [ -z "$KERNEL_RBE_WRAPPER" ] || [ -z "$compile" ] || [ ! -f "$src" ] ||
-        grep -q '\.incbin' "$src"; then
-    exec "$@"
-fi
-
 # reproxy runs the command with an environment of its own
 cc=$1
 shift
@@ -47,6 +42,11 @@ case $cc in
     */*) ;;
     *) cc=$(command -v "$cc") || exit 1 ;;
 esac
+
+if [ -z "$KERNEL_RBE_WRAPPER" ] || [ -z "$compile" ] || [ ! -f "$src" ] ||
+        grep -q '\.incbin' "$src"; then
+    exec "$cc" "$@"
+fi
 
 if [ -z "$depfile" ]; then
     exec $KERNEL_RBE_WRAPPER "$cc" "$@"

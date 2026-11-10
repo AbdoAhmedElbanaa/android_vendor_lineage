@@ -119,6 +119,24 @@
     <string name="config_defaultAttentionService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.attention.service.AiAiAttentionService</string>
     <!-- Live Captions -->
     <string name="config_defaultSystemCaptionsManagerService">com.google.android.as/com.google.android.apps.miphone.aiai.captions.SystemCaptionsManagerService</string>
+    <!-- Content Capture Service - required for Live Translate screen analysis and Pecan intelligence -->
+    <string name="config_defaultContentCaptureService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentCaptureService</string>
+    <!-- System Translation Service -->
+    <string name="config_defaultTranslationService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiTranslationService</string>
+    <!-- Speech Recognition Service for voice typing -->
+    <string name="config_defaultOnDeviceSpeechRecognitionService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiSpeechRecognitionService</string>
+    <!-- Augmented Autofill Service -->
+    <string name="config_defaultAugmentedAutofillService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAugmentedAutofillService</string>
+    <!-- Ambient Context Detection Service -->
+    <string name="config_defaultAmbientContextDetectionService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiAmbientContextDetectionService</string>
+    <!-- AICore On-Device Intelligence Service -->
+    <string name="config_defaultOnDeviceIntelligenceDeviceConfigNamespace" translatable="false">aicore</string>
+    <string name="config_defaultOnDeviceIntelligenceService" translatable="false">com.google.android.aicore/com.google.android.apps.aicore.service.isolated.AiCoreIntelligenceService</string>
+    <string name="config_defaultOnDeviceSandboxedInferenceService" translatable="false">com.google.android.aicore/com.google.android.apps.aicore.service.isolated.AiCoreIsolatedService</string>
+    <!-- Contextual Search (Circle to Search / Omni) -->
+    <string name="config_defaultContextualSearchPackageName" translatable="false">com.google.android.googlequicksearchbox</string>
+    <string name="config_defaultContextualSearchEnabled" translatable="false">omni.enable_cs_helper</string>
+    <string name="config_defaultContextualSearchKey" translatable="false">omni.entry_point</string>
     <!-- Recents text and image selection for Pixel Launcher (not supported by Launcher3) -->
     <string name="config_defaultContentSuggestionsService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.AiAiContentSuggestionsService</string>
     <!-- Launcher app suggestions -->
@@ -186,6 +204,14 @@
         <item>launcher/ENABLE_SEARCH_HAPTIC_HINT=true</item>
         <item>launcher/gboard_update_enter_key=true</item>
         <item>launcher/PSB_RESKIN=true</item>
+        <item>launcher/ENABLE_TWOLINE_ALLAPPS=true</item>
+        <item>launcher/ENABLE_ICON_LABELS_IN_SEARCH=true</item>
+        <item>launcher/ENABLE_ALL_APPS_SEARCH_IN_TASKBAR=true</item>
+
+        <!-- Circle to Search / Contextual Search (Omni) -->
+        <item>launcher/ENABLE_LPNH_OVER_APP=true</item>
+        <item>launcher/ENABLE_CS_SYSUI=true</item>
+        <item>launcher/enable_contextual_search=true</item>
 
         <!-- Pixel Launcher: widgets and data access -->
         <item>launcher/android.provider.launcher_data_access=true</item>
@@ -223,6 +249,8 @@
         <item>systemui/quick_access_wallet_enabled=true</item>
         <item>systemui/tap_to_edit=true</item>
         <item>systemui/volume_separate_notification=true</item>
+        <item>systemui/enable_contextual_search=true</item>
+        <item>systemui/cs.enable_touch_action=true</item>
 
         <!-- Wi-Fi: enable shared connectivity -->
         <item>wifi/shared_connectivity_enabled=true</item>
@@ -277,6 +305,24 @@
         <item>device_personalization_services/Captions__enable_punctuations=true</item>
         <item>device_personalization_services/Captions__enable_setting_page=true</item>
         <item>device_personalization_services/Captions__support_backup_and_restore=true</item>
+        <item>device_personalization_services/Captions__enable_speech_model_auto_download=true</item>
+        <item>device_personalization_services/Captions__enable_sound_events=true</item>
+        <item>device_personalization_services/Captions__enable_translation=true</item>
+        <item>device_personalization_services/Captions__live_caption_translate_languages=de,en,es,fr,it,ja,hi,zh,ru,pl,pt,ko,th,tr,nl,zh_Hant,sv,da,vi,ar,fa,no,bn,fil</item>
+
+        <!-- Now Playing (Ambient Music Recognition) -->
+        <item>device_personalization_services/AmbientAudio__enable_ambient_audio=true</item>
+        <item>device_personalization_services/AmbientAudio__enable_history=true</item>
+        <item>device_personalization_services/AmbientAudio__enable_full_featured=true</item>
+        <item>device_personalization_services/AmbientAudio__enable_on_demand=true</item>
+        <item>device_personalization_services/AmbientAudio__enable_on_demand_history=true</item>
+        <item>device_personalization_services/AmbientAudio__enable_favorites=true</item>
+
+        <!-- AICore / Gemini Nano On-Device Intelligence -->
+        <item>aicore/enable_aicore=true</item>
+        <item>aicore/enable_gemini_nano=true</item>
+        <item>aicore/enable_smart_reply=true</item>
+        <item>aicore/enable_recorder_summarization=true</item>
 
         <!-- Notifications: assistant, organizer and bundles -->
         <item>device_personalization_services/AdvancedNotificationOrganizer__enable_advanced_organizer=true</item>
@@ -417,7 +463,7 @@
         <item>device_personalization_services/TextClassifierWebrefDeploy__template_table_superpacks_manifest_version_v2=21072101</item>
 
         <!-- Translation -->
-        <item>device_personalization_services/Translate__app_blocklist=com.google.android.talk</item>
+        <item>device_personalization_services/Translate__app_blocklist=</item>
         <item>device_personalization_services/Translate__blue_chip_translate_enabled=true</item>
         <item>device_personalization_services/Translate__characterset_lang_detection_enabled=true</item>
         <item>device_personalization_services/Translate__chat_translate_languages=de,en,es,fr,it,ja,hi,zh,ru,pl,pt,ko,th,tr,nl,zh_Hant,sv,da,vi,ar,fa,no,bn,fil</item>
@@ -430,7 +476,7 @@
         <item>device_personalization_services/Translate__enable_opmv4_service=true</item>
         <item>device_personalization_services/Translate__enable_settings_backup_restore=true</item>
         <item>device_personalization_services/Translate__enable_setup_wizard_dialog_v2=true</item>
-        <item>device_personalization_services/Translate__enable_translate_kit_api_migration=false</item>
+        <item>device_personalization_services/Translate__enable_translate_kit_api_migration=true</item>
         <item>device_personalization_services/Translate__interpreter_source_languages=de,en,ja,es,fr,it</item>
         <item>device_personalization_services/Translate__interpreter_target_languages=de,en,ja,es,fr,it</item>
         <item>device_personalization_services/Translate__replace_auto_translate_copied_text_enabled=true</item>
@@ -438,6 +484,26 @@
         <item>device_personalization_services/Translate__translation_service_enabled=true</item>
         <item>device_personalization_services/Translate__translator_expiration_enabled=true</item>
         <item>device_personalization_services/Translate__use_translate_kit_streaming_api=true</item>
+        <item>device_personalization_services/Translate__opm_pcdd_enabled=true</item>
+        <item>device_personalization_services/Translate__enable_data_store_migration=true</item>
+        <item>device_personalization_services/Translate__enable_live_translate_new_settings_ui=true</item>
+        <item>device_personalization_services/Translate__disable_session_state=false</item>
+
+        <!-- Pecan Intelligence Engine - required for Blue Chip floating translate bar -->
+        <item>device_personalization_services/Pecan__enable_pecan=true</item>
+        <item>device_personalization_services/Pecan__emergency_disable_feature_bc_translate=false</item>
+        <item>device_personalization_services/Pecan__enable_pixel_spoon_screen_content_capture=true</item>
+        <item>device_personalization_services/Pecan__enable_pecan_context_text_classifier=true</item>
+        <item>device_personalization_services/Pecan__enable_pecan_context_recorder=true</item>
+        <item>device_personalization_services/Pecan__enable_ambient_cue_scroll=true</item>
+        <item>device_personalization_services/Pecan__ambient_cue_max_chips=5</item>
+        <item>device_personalization_services/Pecan__enable_pecan_scroll=true</item>
+        <item>device_personalization_services/Pecan__enable_conversation_id=true</item>
+        <item>device_personalization_services/Pecan__enable_pecan_plugins=true</item>
+        <item>device_personalization_services/Pecan__enable_pecan_search_suggestion=true</item>
+        <item>device_personalization_services/Pecan__enable_super_icon=true</item>
+        <item>device_personalization_services/Pecan__enabled_packages_for_ambient_cue=com.google.android.apps.messaging,com.whatsapp,com.whatsapp.w4b,org.telegram.messenger,org.telegram.plus,org.thunderdog.challegram,nekox.messenger,com.facebook.orca,com.instagram.android,com.snapchat.android,jp.naver.line.android,com.kakao.talk,com.discord,org.thoughtcrime.securesms,com.viber.voip,com.tencent.mm,im.vector.app,com.twitter.android,com.samsung.android.messaging</item>
+        <item>device_personalization_services/Pecan__enabled_packages_for_ambient_cue_with_ime_zero_state=com.google.android.apps.messaging,com.whatsapp,com.whatsapp.w4b,org.telegram.messenger,org.telegram.plus,org.thunderdog.challegram,nekox.messenger,com.facebook.orca,com.instagram.android,com.snapchat.android,jp.naver.line.android,com.kakao.talk,com.discord,org.thoughtcrime.securesms,com.viber.voip,com.tencent.mm,im.vector.app,com.twitter.android,com.samsung.android.messaging</item>
 
         <!-- Wallpaper effects -->
         <item>device_personalization_services/WallpaperEffects__cinematic_models_mdd_manifest_config=Ct4IEtsICiF3YWxscGFwZXJlZmZlY3RzLWNpbmVtYXRpYy1tb2RlbHMSwgESdWh0dHBzOi8vZGwuZ29vZ2xlLmNvbS9tZGktc2VydmluZy9haWFpLXdhbGxwYXBlcmVmZmVjdHMtY2luZW1hdGljLW1vZGVscy83NDYvNTk2NDgzNDA1MzljOGU2OWRmZGZlYjkzNTk0OTIzYWJmZDBmMGQwNyCM4JQFKig1OTY0ODM0MDUzOWM4ZTY5ZGZkZmViOTM1OTQ5MjNhYmZkMGYwZDA3OhJkZXB0aF9tb2RlbC50ZmxpdGV4AKIBAKoBABLIARJ1aHR0cHM6Ly9kbC5nb29nbGUuY29tL21kaS1zZXJ2aW5nL2FpYWktd2FsbHBhcGVyZWZmZWN0cy1jaW5lbWF0aWMtbW9kZWxzLzc0Ni84NmE3MWYwYTIwYjFhMjhiNTY4MTMwZTliYTZjMTYzZTdhZjQzMTg5IKzsyQQqKDg2YTcxZjBhMjBiMWEyOGI1NjgxMzBlOWJhNmMxNjNlN2FmNDMxODk6GHBlcnNvbl9wb3NlX21vZGVsLnRmbGl0ZXgAogEAqgEAEs0BEnVodHRwczovL2RsLmdvb2dsZS5jb20vbWRpLXNlcnZpbmcvYWlhaS13YWxscGFwZXJlZmZlY3RzLWNpbmVtYXRpYy1tb2RlbHMvNzQ2L2I2NTQxNDFiOTUwNjY3OTVlYjBlNjNlZDRkNzFiZjQxZDQyYjFhNmMgyPPNAiooYjY1NDE0MWI5NTA2Njc5NWViMGU2M2VkNGQ3MWJmNDFkNDJiMWE2YzodcGVyc29uX3NlZ21lbnRlcl9tb2RlbC50ZmxpdGV4AKIBAKoBABLLARJ1aHR0cHM6Ly9kbC5nb29nbGUuY29tL21kaS1zZXJ2aW5nL2FpYWktd2FsbHBhcGVyZWZmZWN0cy1jaW5lbWF0aWMtbW9kZWxzLzc0Ni9lOTllZWJlMDQ2NDk4ZmU2N2MzMzdjZmZkMzkzODM4NTVkMjE0NjM5INCXrwIqKGU5OWVlYmUwNDY0OThmZTY3YzMzN2NmZmQzOTM4Mzg1NWQyMTQ2Mzk6G3JnYmRfaW5wYWludGVyX21vZGVsLnRmbGl0ZXgAogEAqgEAEsQBEnVodHRwczovL2RsLmdvb2dsZS5jb20vbWRpLXNlcnZpbmcvYWlhaS13YWxscGFwZXJlZmZlY3RzLWNpbmVtYXRpYy1tb2RlbHMvNzQ2L2ExNjQ4ZjQ2NDYyZDVmMTExOTVjNmEyYTBhN2M0MTMyZTEwNzJjMDIgsLo6KihhMTY0OGY0NjQ2MmQ1ZjExMTk1YzZhMmEwYTdjNDEzMmUxMDcyYzAyOhVzYWxpZW5jeV9tb2RlbC50ZmxpdGV4AKIBAKoBABgAUABYAGoECAEQAHAAogEAqAEAuAHqBdIBB2RlZmF1bHTaAQDiARsKBwgBEJ+xjRcKBwgCEKCxjRcKBwgDEKGxjRc</item>
