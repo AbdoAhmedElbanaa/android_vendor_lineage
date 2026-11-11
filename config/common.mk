@@ -1,6 +1,7 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 include vendor/rising/config/rising.mk
+$(call inherit-product-if-exists, packages/apps/AxionFx/config.mk)
 ifeq ($(TARGET_INCLUDE_VIPERFX),true)
 $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 endif
